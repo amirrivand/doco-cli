@@ -37,7 +37,7 @@ it just remembers the flags for you.
 ## Install
 
 ```bash
-npm install -g @doco/cli
+npm install -g @amirrivand/doco-cli
 ```
 
 That installs the `doco` command. Run it as `doco` — the package name is only for install and uninstall.
@@ -134,7 +134,7 @@ open **Compose file(s)** from the main menu and pick which ones to pass as `-f`.
 ## Uninstall
 
 ```bash
-npm uninstall -g @doco/cli
+npm uninstall -g @amirrivand/doco-cli
 ```
 
 Cached history at `~/.doco/history.json` is left in place — delete it yourself for a clean slate.
