@@ -1,0 +1,14 @@
+{
+  "$schema": "https://swc.rs/schema.json",
+  "exclude": "\\.d\\.ts$",
+  "jsc": {
+    "parser": {
+      "syntax": "typescript"
+    },
+    "target": "es2020"
+  },
+  "module": {
+    "type": "commonjs"
+  },
+  "sourceMaps": true
+}

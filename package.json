@@ -1,0 +1,81 @@
+{
+  "name": "@amirrivand/doco-cli",
+  "version": "1.3.6",
+  "description": "A polished terminal GUI for driving Docker Compose in the current directory — every compose action, with option pickers, service pickers and a command history you can replay.",
+  "keywords": [
+    "docker",
+    "docker-compose",
+    "compose",
+    "cli",
+    "tui",
+    "terminal",
+    "gui"
+  ],
+  "license": "MIT",
+  "author": "Amir Mohammad Rivand <a_rivand@yahoo.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amirrivand/doco-cli.git"
+  },
+  "type": "commonjs",
+  "bin": {
+    "doco": "./bin/doco.js"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "main": "dist/cli.js",
+  "scripts": {
+    "build": "swc src -d dist --strip-leading-paths --delete-dir-on-start --ignore '**/*.d.ts'",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "vitest run",
+    "prepare": "husky && pnpm run build",
+    "start": "node dist/cli.js"
+  },
+  "dependencies": {
+    "blessed": "^0.1.81",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^21.2.3",
+    "@commitlint/config-conventional": "^21.2.3",
+    "@eslint/js": "^10.0.1",
+    "@swc/cli": "^0.8.1",
+    "@swc/core": "^1.16.2",
+    "@types/blessed": "^0.1.25",
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^22.10.2",
+    "eslint": "^10.11.0",
+    "eslint-config-prettier": "^10.1.8",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.5.1",
+    "prettier": "^3.9.8",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.70.1",
+    "vitest": "^5.0.1"
+  },
+  "lint-staged": {
+    "*.{js,cjs,mjs,ts}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.{json,md,yml,yaml}": "prettier --write"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "all",
+    "printWidth": 100
+  }
+}

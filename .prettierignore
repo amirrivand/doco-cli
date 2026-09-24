@@ -1,0 +1,6 @@
+node_modules
+dist
+.cursor
+coverage
+pnpm-lock.yaml
+package-lock.json
